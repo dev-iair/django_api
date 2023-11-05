@@ -1,0 +1,8 @@
+opencv-python
+redis
+pika
+requests
+djangorestframework
+drf-yasg
+django
+psycopg2
