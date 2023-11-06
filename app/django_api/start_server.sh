@@ -1,4 +1,4 @@
 #!/bin/bash
 
-cd /app/django_api  
+cd /app  
 gunicorn django_api.wsgi:application -c gunicorn_config.py
