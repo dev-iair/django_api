@@ -37,7 +37,7 @@ schema_view_first = get_schema_view(
     patterns=[re_path(r'^first/', include('first.urls'))]
 )
 
-schema_view_second= get_schema_view(
+schema_view_second = get_schema_view(
     openapi.Info(
         title="Django Second API",
         default_version='v1',
@@ -54,10 +54,14 @@ schema_view_second= get_schema_view(
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('first/swagger/', schema_view_first.with_ui('swagger', cache_timeout=0), name='schema-swagger-first'),
-    path('first/redoc/', schema_view_first.with_ui('redoc', cache_timeout=0), name='schema-redoc-first'),
-    path('second/swagger/', schema_view_second.with_ui('swagger', cache_timeout=0), name='schema-swagger-second'),
-    path('second/redoc/', schema_view_second.with_ui('redoc', cache_timeout=0), name='schema-redoc-second'),
+    path('first/swagger/', schema_view_first.with_ui('swagger',
+         cache_timeout=0), name='schema-swagger-first'),
+    path('first/redoc/', schema_view_first.with_ui('redoc',
+         cache_timeout=0), name='schema-redoc-first'),
+    path('second/swagger/', schema_view_second.with_ui('swagger',
+         cache_timeout=0), name='schema-swagger-second'),
+    path('second/redoc/', schema_view_second.with_ui('redoc',
+         cache_timeout=0), name='schema-redoc-second'),
     path('first/', include('first.urls')),
     path('second/', include('second.urls')),
     *static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
