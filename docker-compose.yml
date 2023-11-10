@@ -70,6 +70,9 @@ services:
   #   tty: true
   #   ports:
   #     - "8888:80"
+  #   volumes:
+  #     - ./nginx.conf:/etc/nginx/nginx.conf
+  #     - ./app/django_api/static:/static
   #   networks:
   #     network:
   #   restart: always
